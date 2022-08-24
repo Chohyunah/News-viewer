@@ -38,9 +38,9 @@ const CategoriesBlock = styled.div`
     padding: 1rem;
     width: 760px;
     margin: 0 auto;
-    @media screen and (max-width:768px)
-    width: 100%;
-    overflow-x: auto;
+    @media screen and (max-width:768px){
+      width: 100%;
+      overflow-x: auto;}
 `;
 const Category = styled.div`
   font-size: 1.125rem;
@@ -51,12 +51,11 @@ const Category = styled.div`
   padding-bottom: 0.25rem;
   margin: 0 auto;
 
-
-&:hover {
+  &:hover {
     color: #495057;
   }
  
-  ${props =>
+  ${(props) =>
     props.active && css`
       font-weight: 600;
       border-bottom: 2px solid #22b8cf;
@@ -64,27 +63,26 @@ const Category = styled.div`
       &:hover {
         color: #3bc9db;
       }
-  `}
+    `}
 
-
-& + & {
+  & + & {
     margin-left: 1rem;
   }
 `;
 const Categories = ({ onSelect, category }) => {
-    return (
-      <CategoriesBlock>
-        {categories.map(c => (
-          <Category
-            key={c.name}
-            active={category === c.name}
-            onClick={() => onSelect(c.name)}
-          >
-            {c.text}
-          </Category>
-        ))}
-      </CategoriesBlock>
-    );
-  };
+  return (
+    <CategoriesBlock>
+      {categories.map((a) => (
+        <Category
+          key={a.name}
+          active={category === a.name}
+          onClick={() => onSelect(a.name)}
+        >
+          {a.text}
+        </Category>
+      ))}
+    </CategoriesBlock>
+  );
+};
 
 export default Categories;

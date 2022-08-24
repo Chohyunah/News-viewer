@@ -36,7 +36,7 @@ const categories = [
 const CategoriesBlock = styled.div`
     display: flex;
     padding: 1rem;
-    width; 760px;
+    width: 760px;
     margin: 0 auto;
     @media screen and (max-width:768px)
     width: 100%;
@@ -49,7 +49,7 @@ const Category = styled.div`
   text-decoration: none;
   color: inherit;
   padding-bottom: 0.25rem;
-
+  margin: 0 auto;
 
 
 &:hover {
@@ -86,6 +86,5 @@ const Categories = ({ onSelect, category }) => {
       </CategoriesBlock>
     );
   };
-  // https://thebook.io/080203/ch14/06/01-04/  까지
 
 export default Categories;
